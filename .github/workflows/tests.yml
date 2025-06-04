@@ -85,3 +85,9 @@ jobs:
           cmake ..
           make
           ./src/calculator square 5
+  Deploy:
+      runs-on: ubuntu-latest
+      needs: [Test_Add, Test_Sub, Test_Mult, Test_Div, Test_Carre]
+      steps:
+        - name: Déploiement
+          run: echo "Déploiement de la solution"
